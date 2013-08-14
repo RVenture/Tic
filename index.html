@@ -1,0 +1,1965 @@
+<html>
+  <head>
+    <title>Tic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.ico">
+    <link href="style.css" rel="stylesheet" media="screen">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40650450-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <script type="text/javascript">
+    var x = 2;
+    function hide(id) {
+    document.getElementById(id).style.display = 'none';
+    }
+    function play(id) {
+      var t = document.getElementById(id).innerHTML;
+      if(t == 'X') {
+        return;
+      }
+      if(t == 'O') {
+        return;
+      }
+      if (x%2 == 0) {
+      document.getElementById(id).innerHTML = 'X';
+      // even
+      }
+      else {
+      document.getElementById(id).innerHTML = 'O';
+      //odd
+      }
+      x++;
+
+    var btn1 = document.getElementById(1).innerHTML;
+    var btn2 = document.getElementById(2).innerHTML;
+    var btn3 = document.getElementById(3).innerHTML;
+    var btn4 = document.getElementById(4).innerHTML;
+    var btn5 = document.getElementById(5).innerHTML;
+    var btn6 = document.getElementById(6).innerHTML;
+    var btn7 = document.getElementById(7).innerHTML;
+    var btn8 = document.getElementById(8).innerHTML;
+    var btn9 = document.getElementById(9).innerHTML;
+
+    // Automation
+
+    //corner cases
+
+    //top left 1
+
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == '' && btn5 == '' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(5);
+    }
+
+    //response btn2 2/7 1 2
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(3);
+    }
+
+    //1 2 win
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(7);
+    }
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(7);
+    }
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(7);
+    }
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(7);
+    }
+
+    //1 2 7 
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(4);
+    }
+
+    //1 2 7 win
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == 'O' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+      play(6);
+    }
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == 'O' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+      play(6);
+    }
+
+    //1 2 7 6 draw
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+    //1 2 completed
+
+    //1 3
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(2);
+    }
+
+    //1 3 win
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(8);
+    }
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(8);
+    }
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(8);
+    }
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(8);
+    }
+
+    //1 3 8
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(6);
+    }
+
+    //1 3 8 win
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+      play(4);
+    }
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+      play(4);
+    }
+
+    //1 3 8 7 draw
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(7);
+    }
+
+    //1 4
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(7);
+    }
+
+    //1 4 win
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == '' && btn9 == '') {
+      play(3);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && btn7 == 'O' && btn8 == '' && btn9 == '') {
+      play(3);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+      play(3);
+    }
+
+    //1 4 3
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == '' && btn9 == '') {
+      play(2);
+    }
+
+    //1 4 3 win
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && btn7 == 'O' && btn8 == '' && btn9 == '') {
+      play(8);
+    }
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+      play(8);
+    }
+
+    //1 4 3 9 Draw
+    //Force Draw
+
+    //1 4 Complete
+
+    //1 6
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(3);
+    }
+
+    //1 6 win
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(7);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'O' && btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(7);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(7);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(7);
+    }
+
+    //1 6 7
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(4);
+    }
+
+    //1 6 7 2 play 7 Draw
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(8);
+    }
+    //1 6 7 9 play 7 Draw
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'O' && btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+      play(8);
+    }
+    //1 6 7 8 play 9 Draw
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'O' && btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+      play(9);
+    }
+    //1 6 Completed
+
+    //1 7
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(4);
+    }
+
+    //1 7 win
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == '' && btn4 == 'O' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(6);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == 'O' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(6);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == 'O' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+      play(6);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == 'O' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+      play(6);
+    }
+
+    //1 7 6
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(8);
+    }
+
+    //1 7 6 win
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == 'O' && btn9 == '') {
+      play(2);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+      play(2);
+    }
+
+    //1 7 6 2 Draw
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == '' && btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == 'O' && btn9 == '') {
+      play(3);
+    }
+    //1 7 Complete
+
+    //1 8 
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(7);
+    }
+
+    //1 8 win
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+      play(3);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+      play(3);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+      play(3);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+      play(3);
+    }
+
+    //1 8 3
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+      play(2);
+    }
+
+    //1 8 3 4 Draw play9
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+      play(9);
+    }
+
+    //1 8 3 6 Draw play9
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+      play(9);
+    }
+
+    //1 8 3 9 Draw play6
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+      play(6);
+    }
+
+    //1 9
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(8);
+    }
+
+    //1 9 win
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+      play(2);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+      play(2);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+      play(2);
+    }
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+      play(2);
+    }
+
+    //1 9 2 
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == '' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+      play(3);
+    }
+    //1 9 2 win
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+      play(7);
+    }
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+      play(7);
+    }
+
+    if(btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+      play(4);
+    }
+
+    // 1 9 Draw
+
+    //3
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == '' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(5);
+    }
+
+    //3 2
+    if(btn1 == '' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(1);
+    }
+
+    //3 2 win 4
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+
+    //3 2 win 6
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+    //3 2 win 7
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+    //3 2 win 8
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(9);
+    }
+    //3 2 9 
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(6);
+    }
+
+    //3 2 9 7 win 4
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+      play(4);
+    }
+
+    //3 2 9 8 win 4
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+      play(4);
+    }
+
+    //3 2 9 4 draw 7
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(7);
+    }
+
+    //3 1 covered? yes.
+
+    //3 4
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(1);
+    }
+
+    //3 4 2 win 9
+    //covered
+    /*
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+    */
+
+    //3 4 6 win 9
+    if(btn1 == 'O' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+
+    //3 4 7 win 9
+    if(btn1 == 'O' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+
+    //3 4 8 win 9
+    if(btn1 == 'O' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(9);
+    }
+
+    //3 4 9 block 6
+    if(btn1 == 'O' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(6);
+    }
+
+    //3 4 9 2 play 8 covered
+
+    //3 4 9 7 play 8 do
+    if(btn1 == 'O' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+      play(8);
+    }
+
+    //3 4 9 8 play 7 do
+    if(btn1 == 'O' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+      play(7);
+    }
+
+    //3 6
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+
+    //3 6 2 win play 1
+    if(btn1 == '' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == 'O') {
+      play(1);
+    }
+
+    //3 6 4 win play 1
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == 'O') {
+      play(1);
+    }
+
+    //3 6 7 win play 1
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == '' && btn9 == 'O') {
+      play(1);
+    }
+
+    //3 6 8 win play 1
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == 'X' && btn9 == 'O') {
+      play(1);
+    }
+
+    //3 6 1 block play 2
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == 'O') {
+      play(2);
+    }
+
+    //3 6 1 4 win play 8
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == 'O') {
+      play(8);
+    }
+
+    //3 6 1 7 win play 8
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == 'X' && btn8 == '' && btn9 == 'O') {
+      play(8);
+    }
+
+    //3 6 1 8 draw play 7
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == 'X' && btn9 == 'O') {
+      play(7);
+    }
+
+    //3 7
+    //will repeat
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(6);
+    }
+
+    // 3 7 1,2,8,9 win play 4 do
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(4);
+    }
+    if(btn1 == '' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(4);
+    }
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+      play(4);
+    }
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+      play(4);
+    }
+
+    // 3 7 4 block play 1 do
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(1);
+    }
+
+    // 3 7 4 2,8 win play 9 do
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+    if(btn1 == 'O' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+      play(9);
+    }
+
+    // 3 7 4 9 block play 8 repeat
+
+    // All 3 7 done
+
+    // 3 8
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(6);
+    }
+
+    // 3 8 1,2,7(repeat),9 win play 4 
+
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(4);
+    }
+    if(btn1 == '' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(4);
+    }
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+      play(4);
+    }
+
+    // 3 8 4
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(1);
+    }
+    
+    //3 8 4 2 win play 9
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(9);
+    }
+    
+
+    //3 8 4 7 repeat win
+
+    //3 8 4 9 repeat draw
+
+    // 3 8 done
+
+    // 3 9
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(6);
+    }
+
+    // 3 9 1,2 (8&9 are repeats) win play 4
+    if(btn1 == 'X' && btn2 == '' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(4);
+    }
+    if(btn1 == '' && btn2 == 'X' && btn3 == 'X' && btn4 == '' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(4);
+    }
+
+    // 3 9 4 move play 1
+
+    if(btn1 == '' && btn2 == '' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && btn7 == '' && btn8 == '' && btn9 == 'X') {
+      play(1);
+    }
+
+    // 3 9 4 2 done
+
+    // 3 9 4 7 done
+
+    // 3 9 all done
+
+    // 4
+    if(btn1 == '' && btn2 == '' && btn3 == '' && btn4 == 'X' && btn5 == '' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(5);
+    }
+
+    // 4 1
+
+    if(btn1 == 'X' && btn2 == 'O' && btn3 == 'X' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+      play(8);
+    }
+
+    // 4 1 done
+
+    // 4 2
+    if(btn1 == '' && btn2 == 'X' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(1);
+    }
+
+    // 4 2 6,7,8 win play 9
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == '' && btn8 == 'X' && btn9 == '') {
+      play(9);
+    }
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == '' && btn7 == 'X' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+    if(btn1 == 'O' && btn2 == 'X' && btn3 == '' && btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && btn7 == '' && btn8 == '' && btn9 == '') {
+      play(9);
+    }
+
+    // 4 2 9
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(3);
+    }
+
+    // 4 2 9 6,8 win play 7
+
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(7);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+        play(7);
+    }
+
+    // 4 2 9 7 block play 8
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(8);
+    }
+
+    // 4 2 done
+
+    //4 3 done
+
+    //4 6
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(1);
+    }
+
+    //4 6 7,8
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(9);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(9);
+    }
+
+    //4 6 9
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(3);
+    }
+
+    //4 6 9 2 win play 7
+    //repeat
+    /*
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(7);
+    }
+    */
+
+    //4 6 9 7 win play 2
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(2);
+    }
+
+    //4 6 9 8 win play 2
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+        play(2);
+    }
+
+    //4 6 done
+
+    //4 7
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(1);
+    }
+
+    //4 7 8 win play 9
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+        play(9);
+    }
+
+    //4 7 9
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(8);
+    }
+
+    //4 7 9 3,6 win play 2
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(2);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(2);
+    }
+
+    //4 7 9 2 draw play 3
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(3);
+    }
+
+    //4 7 done
+
+    //4 8
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(7);
+    }
+
+    //4 8 2,6,9 win play 3
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(3);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(3);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(3);
+    }
+
+    //4 8 3
+    if( btn1 == '' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(1);
+    }
+
+    //4 8 3 2,6 win play 9
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(9);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(9);
+    }
+
+    //4 8 3 9 draw play 2
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(6);
+    }
+
+    //4 8 done
+
+    //4 9
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(7);
+    }
+
+    // 4 9 2,6,
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(3);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(3);
+    }
+
+    // 4 9 3
+    if( btn1 == '' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(6);
+    }
+
+    //4 9 3 1 play 2
+    if( btn1 == 'X' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(2);
+    }
+
+    //4 9 3 2 play 1
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(1);
+    }
+
+    //4 9 3 8 play 1
+    if( btn1 == '' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(1);
+    }
+
+    // 4 9 done
+
+    // 5
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(1);
+    }
+
+    // 5 2
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(8);
+    }
+
+    // 5 2 3 p8
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == 'O' && btn9 == '') {
+        play(7);
+    }
+
+    //5 2 3 6,9 win p4
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == 'O' && btn9 == '') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'O' && btn9 == 'X') {
+        play(4);
+    }
+
+    //5 2 3 4 draw p6
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'O' && btn9 == '') {
+        play(6);
+    }
+    //5 2 3 done
+
+    // 5 2 4 p6
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == 'O' && btn9 == '') {
+        play(6);
+    }
+
+    // 5 2 4 7,9,3
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == '') {
+        play(3);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == 'O' && btn9 == '') {
+        play(7);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+        play(3);
+    }
+    // 5 2 4 done
+
+
+    // 5 2 6 p4
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'O' && btn9 == '') {
+        play(4);
+    }
+    //5 2 6 3,9 win p7
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'O' && btn9 == '') {
+        play(7);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+        play(7);
+    }
+
+    //5 2 6 7 draw p3
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == '') {
+        play(3);
+    }
+    //5 2 6 done
+
+    // 5 2 7 p3
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == '') {
+        play(3);
+    }
+
+    //5 2 7 3. 4p6 6p4 9p6
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == '') {
+        play(6);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == '') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(6);
+    }
+    // 5 2 7 done
+
+    // 5 2 9 p6
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+        play(6);
+    }
+
+    //5 2 9 3p7 4p3 7p3
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == 'O' && btn9 == 'X') {
+        play(7);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(3);
+    }
+
+    // 5 2 done
+
+    // 5 3
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(7);
+    }
+
+    // 5 3 2,6,8,9:p4 4p6
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == '' && btn9 == '') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == '' && btn9 == '') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(4);
+    }
+    //5 3 4 2p8 8p2 9p8
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == '' && btn9 == '') {
+        play(6);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == '' && btn9 == '') {
+        play(8);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(2);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(8);
+    }
+    //5 3 done
+
+    //5 4
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(6);
+    }
+
+    //5 4 2p8
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(8);
+    }
+    //5 4 2 3p7 7p3 9p3
+    //what is going on here?
+    
+    //5 4 2 done
+
+    //5 4 3p7
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(7);
+    }
+
+    //5 4 3 done
+
+    //5 4 7p3
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(3);
+    }
+    // 5 4 7 2p8 8p2 9p2
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(8);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+        play(2);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(2);
+    }
+    //5 4 7 done
+
+
+    //5 4 8p2
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(2);
+    }
+
+    //5 4 8 3p7 9p3 7p3
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(7);
+    }
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+        play(3);
+    }
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+        play(3);
+    }
+    //5 4 8 done
+
+    //5 4 9p2
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(2);
+    }
+
+    //5 4 9 3p7 7p3
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(7);
+    }
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(3);
+    }
+    //5 4 done
+
+    //5 6
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(4);
+    }
+
+    //5 6 2p7 
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(7);
+    }
+    //5 6 3p7
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(7);
+    } 
+
+    //5 6 8p7
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(7);
+    } 
+
+    //5 6 9p7
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(7);
+    } 
+
+    //5 6 7p3
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(3);
+    }
+
+    //5 6 7 2p8 8p2 9p8
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(8);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+        play(2);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'O' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(2);
+    }
+    //5 6 done
+
+    //5 7
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(3);
+    }
+
+    //5 7 4p2 6p2 8p2 9p2 2p8
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(2);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(2);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+        play(2);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(2);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(8);
+    }
+    //5 7 done
+
+    //5 8
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(2);
+    }
+
+    //5 8 4p3 6p3 7p3 9p3 3p7
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(3);
+    }
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(3);
+    }
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+        play(3);
+    }
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+        play(3);
+    }
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(7);
+    }
+
+    //5 8 3 6p4 9p4 4p6
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == 'O' && btn3 == 'X' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(6);
+    }
+    //5 8 done
+
+    //5 9
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(7);
+    }
+
+    //5 9 2p4 3p4 6p4 8p4 4p6
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == '' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(6);
+    }
+
+    //5 9 4 2p8 8p2 3p2
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == '' && btn9 == 'X') {
+        play(8);
+    }
+    if( btn1 == 'O' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'X' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(2);
+    }
+    //5 9 done
+
+    //5 done
+
+    //6
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == '' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(5);
+    }
+
+    //6 1p3 2p3 3p9 7p9 8p9 9p3 
+    
+    //6 1 all done
+    
+    //6 2
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(3);
+    }
+
+    //6 2 1p7 4p7 8p7 9p7 7p1
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(7);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(7);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(7);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(1);
+    }
+
+    //6 2 7 4p8 8p9 9p8
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(8);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+        play(9);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(8);
+    }
+    //6 2 done
+
+
+
+
+    //6 3 all done
+
+    //6 7
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(9);
+    }
+
+    //6 7 2p1 3p1 4p1 8p1 1p4
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'O') {
+        play(1);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'O') {
+        play(1);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == 'O') {
+        play(1);
+    }
+    if( btn1 == 'X' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'O') {
+        play(4);
+    }
+
+    //6 7 1 2p3 3p2 8p2
+    if( btn1 == 'X' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'O') {
+        play(3);
+    }
+    if( btn1 == 'X' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'O') {
+        play(2);
+    }
+    if( btn1 == 'X' && btn2 == '' && btn3 == '' && 
+        btn4 == 'O' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == 'O') {
+        play(2);
+    }
+
+    //6 7 done
+
+
+
+
+    //6 8
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(9);
+    }
+
+    //6 8 2p1 3p1 4p1 7p1 1p3
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'O') {
+        play(1);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'O') {
+        play(1);
+    }
+    if( btn1 == 'X' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'O') {
+        play(3);
+    }
+
+    //6 8 1 2p7 4p7 7p4
+    if( btn1 == 'X' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'O') {
+        play(7);
+    }
+    if( btn1 == 'X' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'O') {
+        play(7);
+    }
+    if( btn1 == 'X' && btn2 == '' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == 'O') {
+        play(4);
+    }
+
+    // 6 8 done
+
+    //6 9
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(3);
+    }
+
+    //6 9 4p7 7p8 8p7
+    if( btn1 == '' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(7);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(8);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+        play(7);
+    }
+
+    //6 9 7 1p2 2p1 4p2
+    if( btn1 == 'X' && btn2 == '' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(2);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(1);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(2);
+    }
+
+    // 6 9 done
+
+    // 6 done
+
+    // 7
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == '' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(5);
+    }
+
+    // 7 2
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(1);
+    }
+
+    //7 2 6p9 8p9 9p6
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == '' && btn9 == '') {
+        play(9);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+        play(9);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(8);
+    }
+
+    //7 2 9 3p6 6p3 4p3
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(6);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(3);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(3);
+    }
+
+    //7 2 done
+
+    //7 8
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == '') {
+        play(9);
+    }
+    //7 8 2p1 3p1 4p1 1p4
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == 'O') {
+        play(1);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == 'O') {
+        play(1);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == 'O') {
+        play(1);
+    }
+    if( btn1 == 'X' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == 'O') {
+        play(4);
+    }
+
+    //7 8 1 2p6 3p6
+    if( btn1 == 'X' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'O' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == 'O') {
+        play(6);
+    }
+    if( btn1 == 'X' && btn2 == '' && btn3 == 'X' && 
+        btn4 == 'O' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'X' && btn9 == 'O') {
+        play(6);
+    }
+
+    //7 8 done
+
+
+    //7 9
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(8);
+    }
+
+    //7 9 1p2 3p2 4p2 6p2 2p6
+    if( btn1 == '' && btn2 == '' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(2);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(2);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(2);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(6);
+    }
+
+    //7 9 2 1p4 3p4 4p1
+    if( btn1 == 'X' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(4);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(4);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == 'O' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(1);
+    }
+
+    //7 9 done
+
+    //7 done
+
+    //8
+
+    //8
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == '' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(5);
+    }
+    //8 2
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == '') {
+        play(7);
+    }
+
+    //8 2 1p3 4p3 6p3 9p3 3p1
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(3);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(3);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(1);
+    }
+
+    //8 2 3 6p4  9p4
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == '') {
+        play(4);
+    }
+    if( btn1 == 'O' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(4);
+    }
+    //8 2 done
+
+
+
+    //8 9
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+        play(7);
+    }
+
+    //8 9 1p3 2p3 4p3 6p3 3p6
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'X' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(3);
+    }
+    if( btn1 == '' && btn2 == '' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(6);
+    }
+    //8 9 done
+
+    //9
+    if( btn1 == '' && btn2 == '' && btn3 == '' && 
+        btn4 == '' && btn5 == '' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(5);
+    }
+
+    //9 2
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(3);
+    }
+
+    //9 2 4p7 8p7 7p8
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == 'X') {
+        play(7);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == '' && btn8 == 'X' && btn9 == 'X') {
+        play(7);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == '' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == '' && btn9 == 'X') {
+        play(8);
+    }
+
+    //9 done
+
+    //2
+    if( btn1 == '' && btn2 == 'X' && btn3 == '' && 
+        btn4 == '' && btn5 == '' && btn6 == '' && 
+        btn7 == '' && btn8 == '' && btn9 == '') {
+        play(5);
+    }
+
+    // 9 2 7 4
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'O' && 
+        btn4 == 'X' && btn5 == 'O' && btn6 == '' && 
+        btn7 == 'X' && btn8 == 'O' && btn9 == 'X') {
+        play(1);
+    }
+
+    // 9 8 3 2
+    if( btn1 == 'X' && btn2 == '' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(4);
+    }
+    if( btn1 == '' && btn2 == 'X' && btn3 == 'X' && 
+        btn4 == '' && btn5 == 'O' && btn6 == 'O' && 
+        btn7 == 'O' && btn8 == 'X' && btn9 == 'X') {
+        play(4);
+    }
+
+
+    //wins
+
+    var btn1 = document.getElementById(1).innerHTML;
+    var btn2 = document.getElementById(2).innerHTML;
+    var btn3 = document.getElementById(3).innerHTML;
+    var btn4 = document.getElementById(4).innerHTML;
+    var btn5 = document.getElementById(5).innerHTML;
+    var btn6 = document.getElementById(6).innerHTML;
+    var btn7 = document.getElementById(7).innerHTML;
+    var btn8 = document.getElementById(8).innerHTML;
+    var btn9 = document.getElementById(9).innerHTML;
+
+    function clearBoard() {
+    document.getElementById(1).innerHTML = '';
+    document.getElementById(2).innerHTML = '';
+    document.getElementById(3).innerHTML = '';
+    document.getElementById(4).innerHTML = '';
+    document.getElementById(5).innerHTML = '';
+    document.getElementById(6).innerHTML = '';
+    document.getElementById(7).innerHTML = '';
+    document.getElementById(8).innerHTML = '';
+    document.getElementById(9).innerHTML = '';
+    }
+
+
+    
+
+    // all X wins \/
+    // horiz X wins
+    if (btn1 == 'X' && btn2 == 'X' && btn3 == 'X') {
+    alert('X wins')
+    clearBoard();
+    x=2;
+    }
+    if (btn4 == 'X' && btn5 == 'X' && btn6 == 'X') {
+    alert('X wins')
+
+    clearBoard();
+    x=2;
+    }
+    if (btn7 == 'X' && btn8 == 'X' && btn9 == 'X') {
+    alert('X wins')
+
+    clearBoard();
+    x=2;
+    }
+    // vertical X wins
+    if (btn1 == 'X' && btn4 == 'X' && btn7 == 'X') {
+    alert('X wins')
+
+    clearBoard();
+    x=2;
+    }
+    if (btn2 == 'X' && btn5 == 'X' && btn8 == 'X') {
+    alert('X wins')
+
+    clearBoard();
+    x=2;
+    }
+    if (btn3 == 'X' && btn6 == 'X' && btn9 == 'X') {
+    alert('X wins')
+
+    clearBoard();
+    x=2;
+    }
+    // cross X wins
+    if (btn1 == 'X' && btn5 == 'X' && btn9 == 'X') {
+    alert('X wins')
+
+    clearBoard();
+    x=2;
+    }
+    if (btn3 == 'X' && btn5 == 'X' && btn7 == 'X') {
+    alert('X wins')
+
+    clearBoard();
+    x=2;
+    }
+    
+    // all O wins \/
+    // horiz X wins
+    if (btn1 == 'O' && btn2 == 'O' && btn3 == 'O') {
+    alert('O wins')
+
+    clearBoard();
+    x=2;
+    }
+    if (btn4 == 'O' && btn5 == 'O' && btn6 == 'O') {
+    alert('O wins')
+
+    clearBoard();
+    x=2;
+    }
+    if (btn7 == 'O' && btn8 == 'O' && btn9 == 'O') {
+    alert('O wins')
+
+    clearBoard();
+    x=2;
+    }
+    // vertical X wins
+    if (btn1 == 'O' && btn4 == 'O' && btn7 == 'O') {
+    alert('O wins')
+
+    clearBoard();
+    x=2;
+    }
+    if (btn2 == 'O' && btn5 == 'O' && btn8 == 'O') {
+    alert('O wins')
+
+    clearBoard();
+    x=2;
+    }
+    if (btn3 == 'O' && btn6 == 'O' && btn9 == 'O') {
+    alert('O wins')
+
+    clearBoard();
+    x=2;
+    }
+    // cross X wins
+    if (btn1 == 'O' && btn5 == 'O' && btn9 == 'O') {
+    alert('O wins')
+
+    clearBoard();
+    x=2;
+    }
+    if (btn3 == 'O' && btn5 == 'O' && btn7 == 'O') {
+    alert('O wins')
+
+    clearBoard();
+    x=2;
+    }
+
+    if (x == 11) {
+      alert("Draw")
+
+    clearBoard();
+    x=2;
+    }
+
+    }  
+    </script>
+
+  </head>
+  <body>
+    <center>
+
+    <div class="row-fluid">
+    <div class="span12">
+
+    <div class="span4">
+      <a class="btn btn-block btn-xlarge" id="1" onclick="play(1);"></a>
+    </div>
+    <div class="span4">
+      <a class="btn btn-block btn-xlarge" id="2" onclick="play(2)"></a>
+
+    </div>
+    <div class="span4">
+      <a class="btn btn-block btn-xlarge" id="3" onclick="play(3)"></a>
+
+    </div>
+    </div></div><br>
+
+
+    
+    <div class="row-fluid">
+    <div class="span12">
+
+    <div class="span4">
+      <a class="btn btn-block btn-xlarge" id="4" onclick="play(4)"></a>
+
+    </div>
+    <div class="span4">
+      <a class="btn btn-block btn-xlarge" id="5" onclick="play(5)"></a>
+
+    </div>
+    <div class="span4">
+      <a class="btn btn-block btn-xlarge" id="6" onclick="play(6)"></a>
+
+    </div>
+
+    </div></div><br>
+    <div class="row-fluid">
+    <div class="span12">
+
+    <div class="span4">
+      <a class="btn btn-block btn-xlarge" id="7" onclick="play(7)"></a>
+
+    </div>
+    <div class="span4">
+      <a class="btn btn-block btn-xlarge" id="8" onclick="play(8)"></a>
+
+    </div>
+    <div class="span4">
+      <a class="btn btn-block btn-xlarge" id="9" onclick="play(9)"></a>
+
+    </div>
+
+    </div></div>
+  </center>
+
+    <script src="http://code.jquery.com/jquery.js"></script><script src="js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
